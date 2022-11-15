@@ -7,8 +7,13 @@
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx, .vue src",
-    "format": "yarn run lint --fix & yarn prettier --write 'src/**/*.{js,jsx,ts,tsx,vue}'"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.vue src",
+    "format": "yarn run lint --fix & yarn prettier --write 'src/**/*.{js,jsx,ts,tsx,vue}'",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,vue}": "eslint --cache",
+    "*.**": "prettier --check"
   },
   "dependencies": {
     "vue": "^3.2.41"
@@ -20,6 +25,8 @@
     "eslint": "^8.27.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-vue": "^9.7.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "typescript": "^4.8.4",
     "vite": "^3.2.3",

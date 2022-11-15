@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+. "$(dirname -- "$0")/_/husky.sh"
+
+yarn lint-staged
